@@ -1,7 +1,10 @@
-let express = require('express')
+const express = require('express')
 
-let app = express()
+const app = express()
 
+const personRoute = require('./routes/person')
+// register the person route
+app.use(personRoute)
 app.use(express.static('public'))
 
 const PORT = process.env.PORT || 3000
