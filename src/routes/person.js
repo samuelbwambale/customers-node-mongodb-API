@@ -21,5 +21,10 @@ router.get('/person/:name', (req, res) => {
     res.status(200).send(`You have requested a person ${req.params.name}`)
 })
 
+// error route
+router.get('/error', (req, res) => {
+    throw new Error('An error has occured')
+})
+
 
 module.exports = router
