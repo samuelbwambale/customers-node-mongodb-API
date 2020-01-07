@@ -2,6 +2,20 @@ const customerModel = require('../models/customer')
 const express = require('express')
 const router = express.Router()
 
+
+/*  req.params, req.query and req.body 
+
+        req.query comes from query parameters in the URL such as http://foo.com/somePath?name=ted 
+        where req.query.name === "ted".
+
+        req.params comes from path segments of the URL that match a parameter in the route definition 
+        such as /song/:songid. So, with a route using that designation and a URL such as /song/48586, 
+        then req.params.songid === "48586".
+
+        req.body properties come from a form post where the form data (which is submitted in the body contents) 
+        has been parsed into properties of the body tag.
+*/
+
 // CREATE a new customer
 router.post('/customer', (req, res) => {
     if(!req.body){
